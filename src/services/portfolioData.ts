@@ -1,8 +1,11 @@
+import { link } from "fs";
+
 // Portfolio data model
 export const portfolioData = {
-  name: "Naiyana Norkaew",
+  name: "Naiyana Norkaew (Oki)",
   title: "Full Stack Developer",
-  about: "Junior Developer who likes video editing, writing, music and cameras",
+  statement: "An INFJ who likes video production, writing, music, games and cameras",
+  profile: "/asset/profile.jpg",
   skills: [
     { name: "JavaScript", level: 90 },
     { name: "React", level: 85 },
@@ -23,8 +26,8 @@ export const portfolioData = {
     },
   ],
   contact: {
-    email: "your.email@example.com",
-    linkedin: "linkedin.com/in/yourprofile",
+    email: "naiyana.nk14@gmail.com",
+    linkedin: "linkedin.com/in/naiyana-nk",
     github: "github.com/yourusername",
   },
 };
