@@ -2,7 +2,7 @@ import { portfolioData } from "@/services/portfolioData";
 
 export default function intro() {
   return (
-    <section className="min-h-screen flex items-center bg-blue-100 from-blue-50 to-indigo-100 pt-16">
+    <section className="min-h-screen flex items-center bg-blue-100 from-blue-50 to-indigo-100">
       <div className="container mx-auto px-15 py-20 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-10 md:mb-0">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight ml-10">
@@ -19,7 +19,7 @@ export default function intro() {
           </button>
         </div>
         <div className="md:w-1/2 flex justify-center">
-            <img src={portfolioData.profile} alt="Logo" className="w-300rem h-300rem rounded-full object-cover"/>
+            <img src={portfolioData.profile} alt="Logo" className="w-50rem h-50rem rounded-full object-cover"/>
         </div>
       </div>
     </section>
