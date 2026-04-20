@@ -1,65 +1,98 @@
-export default function PortFolioPage() {
+const projects = [
+  {
+    id: 1,
+    title: "E-Commerce Dashboard",
+    description: "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    techStack: ["Next.js", "Tailwind CSS", "Prisma", "PostgreSQL"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+];
+
+export default function ProjectsPage() {
   return (
-    <div className="bg-white min-h-screen text-black">
-      <div className="bg-gray-900">
-        <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-gray-800 px-6 pt-16 after:pointer-events-none after:absolute after:inset-0 after:inset-ring after:inset-ring-white/10 sm:rounded-3xl sm:px-16 after:sm:rounded-3xl md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-            <svg
-              viewBox="0 0 1024 1024"
-              aria-hidden="true"
-              className="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+    <div className="bg-gray-50 min-h-screen flex flex-col text-gray-900">
+      <main className="flex-grow pt-16 pb-24 px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        {/* Page Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+            My Projects
+          </h1>
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            A collection of things I've built. From full-stack applications to experimental front-end interfaces.
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col"
             >
-              <circle
-                r={512}
-                cx={512}
-                cy={512}
-                fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-                fillOpacity="0.7"
-              />
-              <defs>
-                <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                  <stop stopColor="#7775D6" />
-                  <stop offset={1} stopColor="#E935C1" />
-                </radialGradient>
-              </defs>
-            </svg>
-            <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-              <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
-                Boost your productivity. Start using our app today.
-              </h2>
-              <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-                Ac euismod vel sit maecenas id pellentesque eu sed consectetur.
-                Malesuada adipiscing sagittis vel nulla.
-              </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                <a
-                  href="#"
-                  className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                >
-                  {" "}
-                  Get started{" "}
-                </a>
-                <a
-                  href="#"
-                  className="text-sm/6 font-semibold text-white hover:text-gray-100"
-                >
-                  Learn more
-                  <span aria-hidden="true">→</span>
-                </a>
+              {/* Project Image */}
+              <div className="aspect-video w-full overflow-hidden bg-gray-200">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Project Content */}
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-6 flex-grow">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold text-indigo-600 hover:text-indigo-500 flex items-center gap-1 transition-colors"
+                  >
+                    Live Demo
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold text-gray-700 hover:text-gray-900 flex items-center gap-1 transition-colors"
+                  >
+                    GitHub
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="relative mt-16 h-80 lg:mt-8">
-              <img
-                alt="App screenshot"
-                src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-                width={1824}
-                height={1080}
-                className="absolute top-0 left-0 w-228 max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-              />
-            </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </main>
+
+      {/* Reusable Footer */}
+      <footer className="bg-white py-10 text-center text-gray-500 border-t border-gray-200 mt-auto">
+        <p className="text-sm">
+          © {new Date().getFullYear()} Your Name. Never gonna let you down.
+        </p>
+      </footer>
     </div>
   );
 }
