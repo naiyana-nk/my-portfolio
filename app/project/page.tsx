@@ -86,13 +86,6 @@ export default function ProjectsPage() {
           ))}
         </div>
       </main>
-
-      {/* Reusable Footer */}
-      <footer className="bg-white py-10 text-center text-gray-500 border-t border-gray-200 mt-auto">
-        <p className="text-sm">
-          © {new Date().getFullYear()} Your Name. Never gonna let you down.
-        </p>
-      </footer>
     </div>
   );
 }

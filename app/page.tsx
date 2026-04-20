@@ -1,39 +1,77 @@
+"use client";
+
+import { useState, useRef } from "react";
+
 export default function Home() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  // Change the ref to target an iframe instead of audio
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const toggleAudio = () => {
+    // Safety check
+    if (!iframeRef.current?.contentWindow) return;
+
+    if (isPlaying) {
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ event: "command", func: "mute", args: [] }),
+        "*",
+      );
+      setIsPlaying(false);
+    } else {
+      // Tell the video to seek back to 0 seconds
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ event: "command", func: "seekTo", args: [0, true] }),
+        "*",
+      );
+
+      // Unmute it so they hear the intro immediately
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ event: "command", func: "unMute", args: [] }),
+        "*",
+      );
+      setIsPlaying(true);
+    }
+  };
+
   return (
     <div className="bg-white text-black min-h-screen flex flex-col">
       <main className="flex-grow">
-        {/* HERO SECTION (Your original code, enhanced) */}
-        <section className="pt-10 pb-16 px-6 lg:px-8 max-w-7xl mx-auto w-full">
-          <h1 className="text-center text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 pb-10">
-            Welcome to My Portfolio
+        <section className="relative pt-32 pb-40 px-6 lg:px-8 w-full flex flex-col items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 w-full h-full overflow-hidden -z-20 pointer-events-none">
+            <iframe
+              ref={iframeRef}
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=dQw4w9WgXcQ&enablejsapi=1"
+              className="absolute top-1/2 left-1/2 w-[150vw] h-[150vh] min-w-[100vw] min-h-[100vh] -translate-x-1/2 -translate-y-1/2 object-cover"
+              allow="autoplay; encrypted-media"
+              frameBorder="0"
+            ></iframe>
+          </div>
+
+          <div className="absolute inset-0 bg-gray-900/75 -z-10 backdrop-blur-[2px]"></div>
+
+          <h1 className="text-center text-4xl sm:text-5xl font-extrabold tracking-tight text-black pb-8 drop-shadow-lg max-w-4xl mx-auto">
+            Welcome to My Portfolio Website
           </h1>
 
-          <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            className="-m-1.5 p-1.5 block w-fit mx-auto group"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="sr-only">Never Gonna Give You Up</span>
-            <div className="relative overflow-hidden rounded-xl shadow-2xl transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-indigo-500/20 ring-1 ring-gray-900/5">
-              <img
-                alt="My best project"
-                src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
-                className="h-auto max-h-[400px] w-auto rounded-xl object-cover"
-              />
-              {/* Subtle overlay effect on hover */}
-              <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-300 rounded-xl"></div>
-            </div>
-          </a>
-
-          <p className="text-center mt-8 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-center mb-10 text-lg text-black-200 max-w-2xl mx-auto drop-shadow-md">
             I'm a full-stack developer passionate about building seamless
-            digital experiences. Click the image above to see my most robust and
-            foolproof application yet.
+            digital experiences. I'm never gonna give up on writing clean code.
           </p>
+
+          <button
+            onClick={toggleAudio}
+            className={`cursor-pointer inline-flex items-center justify-center px-8 py-4 text-base font-bold transition-all duration-300 rounded-full shadow-lg ${
+              isPlaying
+                ? "bg-indigo-600 text-white hover:bg-indigo-700 hover:scale-95"
+                : "bg-white text-gray-900 border border-transparent hover:bg-gray-100 hover:scale-105"
+            }`}
+          >
+            {isPlaying ? "⏸ Pause Music" : "🔊 Surprise!"}
+          </button>
         </section>
 
-        {/* WHAT I DO SECTION (New addition for a complete landing page) */}
+        {/* WHAT I DO SECTION */}
         <section className="py-20 bg-gray-50 border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-10 text-center">
@@ -42,7 +80,6 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="h-10 w-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mb-6">
-                  {/* Icon placeholder */}
                   <svg
                     className="w-6 h-6"
                     fill="none"
@@ -119,13 +156,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      {/* FOOTER */}
-      <footer className="bg-white py-10 text-center text-gray-500 border-t border-gray-200">
-        <p className="text-sm">
-          © {new Date().getFullYear()} Naiyana Norkaew. Never gonna let you down.
-        </p>
-      </footer>
     </div>
   );
 }
