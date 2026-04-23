@@ -58,6 +58,9 @@ export default function Header() {
           <a href="/#about" className={navLinkStyles}>
             About
           </a>
+          <a href="/#experience" className={navLinkStyles}>
+            Experiences
+          </a>
           <a href="/#projects" className={navLinkStyles}>
             Projects
           </a>
@@ -65,19 +68,6 @@ export default function Header() {
             Contact
           </a>
         </PopoverGroup>
-
-        {/* Desktop GitHub Link */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="https://github.com/naiyana-nk" target="_blank" className={`group ${navLinkStyles}`}>
-            My GitHub{" "}
-            <span
-              aria-hidden="true"
-              className="inline-block transition-transform duration-300 group-hover:translate-x-1"
-            >
-              &rarr;
-            </span>
-          </a>
-        </div>
       </nav>
 
       {/* Mobile Menu Dialog */}
@@ -122,22 +112,17 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/25">
               <div className="space-y-2 py-6 flex flex-col">
                 {/* Applied floating styles to mobile links as well */}
-                <a href="/project" className={`w-fit ${navLinkStyles} py-2`}>
-                  Projects
-                </a>
-                <a href="#" className={`w-fit ${navLinkStyles} py-2`}>
+                <a href="/#about" className={`w-fit ${navLinkStyles} py-2`} onClick={() => setMobileMenuOpen(false)}>
                   About
                 </a>
-              </div>
-              <div className="py-6">
-                <a href="https://github.com/naiyana-nk" target="_blank" className={`w-fit group ${navLinkStyles} py-2`}>
-                  My GitHub{" "}
-                  <span
-                    aria-hidden="true"
-                    className="inline-block transition-transform duration-300 group-hover:translate-x-1"
-                  >
-                    &rarr;
-                  </span>
+                <a href="/#experience" className={`w-fit ${navLinkStyles} py-2`} onClick={() => setMobileMenuOpen(false)}>
+                  Experience
+                </a>
+                <a href="/#projects" className={`w-fit ${navLinkStyles} py-2`} onClick={() => setMobileMenuOpen(false)}>
+                  Projects
+                </a>
+                <a href="/#contact" className={`w-fit ${navLinkStyles} py-2`} onClick={() => setMobileMenuOpen(false)}>
+                  Contact
                 </a>
               </div>
             </div>

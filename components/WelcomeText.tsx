@@ -35,7 +35,7 @@ export default function WelcomeText() {
   };
 
   return (
-    <section className="relative pt-30 pb-30 px-6 lg:px-8 w-full flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative pt-30 pb-30 px-6 lg:px-8 w-full flex flex-col items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0 w-full h-full overflow-hidden -z-20 pointer-events-none">
         <iframe
           ref={iframeRef}
@@ -48,11 +48,11 @@ export default function WelcomeText() {
 
       <div className="absolute inset-0 bg-gray-900/75 -z-10 backdrop-blur-[2px]"></div>
 
-      <h1 className="text-center text-4xl sm:text-5xl font-extrabold tracking-tight text-black pb-8 drop-shadow-lg max-w-4xl mx-auto">
+      <h1 className="text-center text-4xl sm:text-5xl font-extrabold tracking-tight text-white pb-8 drop-shadow-lg max-w-4xl mx-auto">
         Welcome to My Portfolio Website
       </h1>
 
-      <p className="text-center mb-10 text-lg text-gray-700 max-w-2xl mx-auto drop-shadow-md">
+      <p className="text-center mb-10 text-lg text-white max-w-2xl mx-auto drop-shadow-md">
         Please click the button below to experience a surprise that will make
         your day!
       </p>

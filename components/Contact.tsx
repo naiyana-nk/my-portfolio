@@ -93,11 +93,16 @@ export default function Contact() {
                   value: "naiyana.nk14@gmail.com",
                   href: "mailto:naiyana.nk14@gmail.com",
                 },
-                { label: "GitHub", value: "github.com/naiyana-nk", href: "#" },
+                { label: "GitHub", value: "github.com/naiyana-nk", href: "https://github.com/naiyana-nk" },
                 {
                   label: "LinkedIn",
                   value: "linkedin.com/in/naiyana-nk",
-                  href: "#",
+                  href: "https://linkedin.com/in/naiyana-nk",
+                },
+                {
+                  label: "Tel.",
+                  value: "(+66) 092-727-7885",
+                  href: "tel:+66927277885",
                 },
               ].map(({ label, value, href }) => (
                 <div key={label} className="flex items-center gap-4">
@@ -107,6 +112,7 @@ export default function Contact() {
                   <a
                     href={href}
                     className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-light"
+                    target="_blank"
                   >
                     {value}
                   </a>

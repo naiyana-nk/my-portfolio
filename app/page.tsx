@@ -4,6 +4,7 @@ import AboutMe from "@/components/AboutMe";
 import WelcomeText from "@/components/WelcomeText";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <main className="flex-grow">
         <WelcomeText />
         <AboutMe />
+        <Experience />
         <Projects />
         <Contact />
       </main>
