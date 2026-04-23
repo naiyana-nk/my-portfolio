@@ -62,9 +62,6 @@ export default function Header() {
             Projects
           </a>
           <a href="#" className={navLinkStyles}>
-            About
-          </a>
-          <a href="#" className={navLinkStyles}>
             Contact
           </a>
         </PopoverGroup>
@@ -130,9 +127,6 @@ export default function Header() {
                 </a>
                 <a href="/project" className={`w-fit ${navLinkStyles} py-2`}>
                   Projects
-                </a>
-                <a href="#" className={`w-fit ${navLinkStyles} py-2`}>
-                  About
                 </a>
                 <a href="#" className={`w-fit ${navLinkStyles} py-2`}>
                   Contact
