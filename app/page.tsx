@@ -67,7 +67,7 @@ export default function Home() {
                 : "bg-white text-gray-900 border border-transparent hover:bg-gray-100 hover:scale-105"
             }`}
           >
-            {isPlaying ? "⏸ Pause Music" : "🔊 Surprise!"}
+            {isPlaying ? "⏸ Stop" : "🔊 Surprise!"}
           </button>
         </section>
 
