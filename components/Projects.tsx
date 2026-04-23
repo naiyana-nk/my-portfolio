@@ -44,10 +44,10 @@ export default function Projects() {
 
               {/* Project Content */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-base font-medium text-gray-900 mb-2">
+                <h3 className="text-base font-bold text-gray-900 mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm font-light leading-relaxed mb-6 flex-grow">
+                <p className="text-gray-600 text-sm font-light leading-relaxed mb-6 flex-grow">
                   {project.description}
                 </p>
 
@@ -56,7 +56,7 @@ export default function Projects() {
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[11px] tracking-wide border border-gray-200 rounded-full px-3 py-1 text-gray-500"
+                      className="text-[11px] tracking-wide border border-gray-200 rounded-full px-3 py-1 text-indigo-500"
                     >
                       {tech}
                     </span>
@@ -69,9 +69,9 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs tracking-widest uppercase text-gray-900 hover:text-gray-500 transition-colors"
+                    className="text-xs tracking-widest uppercase text-indigo-500 hover:text-gray-900 transition-colors"
                   >
-                    Live Demo →
+                    Link {'>'}
                   </a>
                   <a
                     href={project.githubUrl}

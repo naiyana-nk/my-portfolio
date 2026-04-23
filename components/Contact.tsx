@@ -44,18 +44,18 @@ export default function Contact() {
           font-size: 11px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          border: 0.5px solid #d1d5db;
+          border: 1px solid #d1d5db;
           border-radius: 100px;
           padding: 12px 32px;
           background: transparent;
-          color: #111;
+          color: #6366f1;
           cursor: pointer;
           transition: background 0.2s, color 0.2s, border-color 0.2s;
         }
         .contact-submit:hover:not(:disabled) {
-          background: #111;
+          background: #6366f1;
           color: #fff;
-          border-color: #111;
+          border-color: #6366f1;
         }
         .contact-submit:disabled { opacity: 0.4; cursor: not-allowed; }
       `}</style>

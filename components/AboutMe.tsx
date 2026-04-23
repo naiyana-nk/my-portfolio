@@ -101,23 +101,6 @@ export default function AboutMe() {
               to collaborate and create amazing things together!
             </p>
 
-            {/* Social links */}
-            <div className="flex flex-wrap gap-3 mb-12">
-              {["LinkedIn", "Email me"].map((label) => (
-                <a
-                  key={label}
-                  href={
-                    label === "LinkedIn"
-                      ? "https://linkedin.com"
-                      : "mailto:naiyana.nk14@gmail.com"
-                  }
-                  className="social-link text-xs tracking-widest uppercase border border-gray-300 rounded-full px-5 py-2.5 text-gray-700"
-                >
-                  {label}
-                </a>
-              ))}
-            </div>
-
             {/* Skills */}
             <div>
               <p className="text-[10px] tracking-[0.16em] uppercase text-gray-400 mb-4">
