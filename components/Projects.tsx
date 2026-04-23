@@ -1,27 +1,29 @@
+"use client";
+
 const projects = [
   {
     id: 1,
     title: "E-Commerce Dashboard",
-    description: "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
     techStack: ["Next.js", "Tailwind CSS", "Prisma", "PostgreSQL"],
     liveUrl: "#",
     githubUrl: "#",
   },
 ];
 
-export default function ProjectsPage() {
+export default function Projects() {
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col text-gray-900">
-      <main className="flex-grow pt-16 pb-24 px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+    <section id="projects" className="py-28 px-6 lg:px-8 bg-white border-t border-gray-100 scroll-mt-10">
+      <div className="max-w-5xl mx-auto">
+        {/* Section label */}
+        <div className="flex items-center gap-4 mb-16 about-fade-in">
+          <span className="text-lg tracking-[0.18em] uppercase text-black font-bold">
             My Projects
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            A collection of things I've built. From full-stack applications to experimental front-end interfaces.
-          </p>
+          </span>
+          <span className="flex-1 h-px bg-gray-200" />
         </div>
 
         {/* Projects Grid */}
@@ -29,10 +31,10 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col"
+              className="group bg-white rounded-2xl border border-gray-100 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col"
             >
               {/* Project Image */}
-              <div className="aspect-video w-full overflow-hidden bg-gray-200">
+              <div className="aspect-video w-full overflow-hidden bg-gray-100">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -42,10 +44,10 @@ export default function ProjectsPage() {
 
               {/* Project Content */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-base font-medium text-gray-900 mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-6 flex-grow">
+                <p className="text-gray-400 text-sm font-light leading-relaxed mb-6 flex-grow">
                   {project.description}
                 </p>
 
@@ -54,7 +56,7 @@ export default function ProjectsPage() {
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700"
+                      className="text-[11px] tracking-wide border border-gray-200 rounded-full px-3 py-1 text-gray-500"
                     >
                       {tech}
                     </span>
@@ -67,16 +69,15 @@ export default function ProjectsPage() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold text-indigo-600 hover:text-indigo-500 flex items-center gap-1 transition-colors"
+                    className="text-xs tracking-widest uppercase text-gray-900 hover:text-gray-500 transition-colors"
                   >
-                    Live Demo
-                    <span aria-hidden="true">&rarr;</span>
+                    Live Demo →
                   </a>
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold text-gray-700 hover:text-gray-900 flex items-center gap-1 transition-colors"
+                    className="text-xs tracking-widest uppercase text-gray-400 hover:text-gray-900 transition-colors"
                   >
                     GitHub
                   </a>
@@ -85,7 +86,7 @@ export default function ProjectsPage() {
             </div>
           ))}
         </div>
-      </main>
-    </div>
+      </div>
+    </section>
   );
 }

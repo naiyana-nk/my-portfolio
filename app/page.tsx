@@ -2,6 +2,8 @@
 
 import AboutMe from "@/components/AboutMe";
 import WelcomeText from "@/components/WelcomeText";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -9,6 +11,8 @@ export default function Home() {
       <main className="flex-grow">
         <WelcomeText />
         <AboutMe />
+        <Projects />
+        <Contact />
       </main>
     </div>
   );

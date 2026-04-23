@@ -22,7 +22,7 @@ export default function AboutMe() {
   ];
 
   return (
-    <section className="about-section py-28 px-6 lg:px-8 bg-white border-t border-gray-100">
+    <section id="about" className="about-section py-28 px-6 lg:px-8 bg-white border-t border-gray-100 scroll-mt-10">
       <style>{`
         .about-fade-in {
           animation: aboutFadeUp 0.7s ease forwards;
@@ -61,7 +61,7 @@ export default function AboutMe() {
       <div className="max-w-5xl mx-auto">
         {/* Section label */}
         <div className="flex items-center gap-4 mb-16 about-fade-in">
-          <span className="text-xs tracking-[0.18em] uppercase text-gray-400">
+          <span className="text-lg tracking-[0.18em] uppercase text-black font-bold">
             About me
           </span>
           <span className="flex-1 h-px bg-gray-200" />

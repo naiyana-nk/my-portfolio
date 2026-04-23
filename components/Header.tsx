@@ -55,13 +55,13 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <a href="/" className={navLinkStyles}>
-            Home
+          <a href="/#about" className={navLinkStyles}>
+            About
           </a>
-          <a href="/project" className={navLinkStyles}>
+          <a href="/#projects" className={navLinkStyles}>
             Projects
           </a>
-          <a href="#" className={navLinkStyles}>
+          <a href="/#contact" className={navLinkStyles}>
             Contact
           </a>
         </PopoverGroup>
@@ -122,14 +122,11 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/25">
               <div className="space-y-2 py-6 flex flex-col">
                 {/* Applied floating styles to mobile links as well */}
-                <a href="/" className={`w-fit ${navLinkStyles} py-2`}>
-                  Home
-                </a>
                 <a href="/project" className={`w-fit ${navLinkStyles} py-2`}>
                   Projects
                 </a>
                 <a href="#" className={`w-fit ${navLinkStyles} py-2`}>
-                  Contact
+                  About
                 </a>
               </div>
               <div className="py-6">
