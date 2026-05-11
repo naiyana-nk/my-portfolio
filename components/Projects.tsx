@@ -5,7 +5,7 @@ const projects = [
     id: 1,
     title: "Corporate Website",
     description:
-      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+      "A corporate website for BeBlcok Bangkok, an Acrylic Manufacturer company in from Japan that has a branch in Thailand.",
     image: "./imgs/corporate-web.png",
     techStack: ["HTML5", "CSS3", "JavaScript", "Google Analytics"],
     liveUrl: "https://beblock-bangkok.co.th/",
@@ -14,7 +14,7 @@ const projects = [
     id: 2,
     title: "Custom Acrylic E-commerce Website",
     description:
-      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+      "A Multilingual E-commerce website for BeBlock Bangkok, featuring a custom product builder that allows customers to design and customize their own acrylic products with automated order management for the staffs.",
     image: "./imgs/acryl-prod.png",
     techStack: ["HTML5", "CSS3", "JavaScript", "Google App Scripts", "Google Analytics"],
     liveUrl: "https://acryltatsujin-th.com/",
@@ -23,7 +23,7 @@ const projects = [
     id: 3,
     title: "Firewall Log Analytic With Generative AI Website",
     description:
-      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+      "A dashboard for analyzing firewall logs using generative AI to provide insights and recommendations for network security and performance and download a full monthly report to reduce work hour for staffs.",
     image: "./imgs/firewall-proj.png",
     techStack: ["Vue.js", "Vuetify", "Python", "SQL", "FastAPI", "Uvicorn", "Gemini 1.5 Flash"],
     liveUrl: "https://drive.google.com/file/d/1iC2E2ghWqTiEp5ypoVh5ASoWhAxeV33c/view?usp=drive_link",
@@ -32,7 +32,7 @@ const projects = [
     id: 4,
     title: "Automate Bed Management System",
     description:
-      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+      "An automated dashboard and workflow for managing hospital bed availability, patient admissions, and discharges using Microsoft Power Automate, Forms, and Excel to streamline the bed management process and improve efficiency.",
     image: "./imgs/abms.png",
     techStack: ["Microsoft Power Automate", "Microsoft Forms", "Microsoft Excel"],
     liveUrl: "https://www.youtube.com/watch?v=_CL5Ty9P2vg",
@@ -41,7 +41,7 @@ const projects = [
     id: 5,
     title: "Monozukuri Sunshine Website",
     description:
-      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+      "A blog website project for introducing the concept of monozukuri, a Japanese term that means 'the art of making things', sharing the stories of my favorite anime as a theme and how it was made using Wordpress as the CMS.",
     image: "./imgs/monozukuri.png",
     techStack: ["Wordpress",],
     liveUrl: "https://monozukurisunshine.wordpress.com/",
