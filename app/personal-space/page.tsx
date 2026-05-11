@@ -12,6 +12,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const YOUTUBE_VIDEO_ID = "o4AS22B_9vU";
+
 const hobbies = [
   {
     emoji: "🎮",
@@ -31,17 +33,24 @@ const hobbies = [
     description:
       "Of course it has to be fictional stories, I like to read about different worlds and characters, it's a great way to escape reality, to give myself a breather and enjoy the world that is different from my world.",
   },
+
+  {
+    emoji: "✍️",
+    title: "Writing",
+    description:
+      "This hobbie could have been what I do if I haven't got into coding, I tend to not showing my real feelings to people around me, and sometimes, it just builds up and I need to let it out, so I write. sometimes diary, sometimes short stories just to make my feelings feel heard or some of my dreams that I cannot be come true.",
+  },
+  {
+    emoji: "🎞️",
+    title: "Video Editing",
+    description:
+      "Another one of my hobbies that I once considered turning into a job too, I find it really fun to edit videos, to think of how the story goes and how I can align the video into a stunning story, but now I just edit videos for fun, like some of the clips that I took when playing a game with friends",
+  },
   {
     emoji: "📷",
     title: "Photography",
     description:
       "I usually take photos of nature, landscapes and the sunset. Sometimes, I take photos of not me but my friends when we hang out, I want to capture the moments where I am the perspective of an observer, not the one being observed. It's refreshing sometimes.",
-  },
-  {
-    emoji: "✍️",
-    title: "Writing",
-    description:
-      "I tend to not showing my real feelings to people around me, and sometimes, it just builds up and I need to let it out, so I write. sometimes diary, sometimes short stories just to make my feelings feel heard or some of my dreams that I cannot be come true.",
   },
 ];
 
@@ -49,56 +58,78 @@ const favorites = [
   {
     category: "Game",
     items: [
-      "Genshin Impact",
-      "Honkai Star Rail",
-      "Umamusume Pretty Derby",
-      "Project Sekai Colorful Stage",
-      "Zenless Zone Zero",
-      "Red Dead Redemption 2",
-      "Call of Duty",
-      "Stardew Valley",
-      "FIFA",
-      "F1",
+      { name: "Genshin Impact", image: './imgs/genshin.jpg' },
+      { name: "Honkai Star Rail", image: './imgs/starrail.jpg' },
+      { name: "Umamusume Pretty Derby", image: './imgs/umamusume.png' },
+      { name: "Project Sekai Colorful Stage", image: './imgs/pjsk.png' },
+      { name: "Zenless Zone Zero", image: './imgs/zzz.png' },
+      { name: "Red Dead Redemption 2", image: './imgs/rdr2.jpg' },
+      { name: "Call of Duty", image: './imgs/cod.png' },
+      { name: "Stardew Valley", image: './imgs/stardew.png' },
+      { name: "FIFA", image: './imgs/fifa.png' },
+      { name: "F1", image: './imgs/f1.jpg' },
     ],
   },
   {
     category: "Anime",
     items: [
-      "Love Live! Series",
-      "Kimetsu no Yaiba",
-      "Lycoris Recoil",
-      "Inazuma Eleven",
-      "Sword Art Online",
-      "Madoka Magica",
-      "Re:Zero",
-      "Kantai Collection",
-      "Tensei oujo to Tensai reijou no Mahou Kakumei",
+      { name: "Love Live! School Idol Project", image: './imgs/lovelive.jpg' },
+      { name: "Kimetsu no Yaiba", image: './imgs/kny.png' },
+      { name: "Lycoris Recoil", image: './imgs/lycoreco.png' },
+      { name: "Sword Art Online", image: './imgs/sao.png' },
+      { name: "Madoka Magica", image: './imgs/madoka.png' },
+      { name: "Re:Zero", image: './imgs/rezero.jpg' },
+      { name: "Kantai Collection", image: './imgs/kancolle.jpg' },
+      { name: "Tensei oujo to Tensai reijou no Mahou Kakumei", image: './imgs/tensaitensei.jpg' },
     ],
   },
   {
     category: "Music",
     items: [
-      "D/N/A - Nightcord at 25:00",
-      "Engeki - Nightcord at 25:00",
-      "Stay on course - Dream Journey",
-      "Supernova - MORE MORE JUMP!",
-      "Cinema - Vivid BAD SQUAD",
-      "Regulus - Leo/need",
-      "Eyelid - Wonderland x Showtime",
-      "Kotobakaze - Tokino Sora",
+      { name: "D/N/A", image: './imgs/dna.jpg' },
+      { name: "Engeki", image: './imgs/engeki.jpg' },
+      { name: "Stay on Course", image: './imgs/janii.jpg' },
+      { name: "Supernova", image: './imgs/supernova.jpg' },
+      { name: "Cinema", image: './imgs/cinema.jpg' },
+      { name: "Regulus", image: './imgs/regulus.png' },
+      { name: "Eyelid", image: './imgs/eyelid.jpg' },
+      { name: "Kotobakaze", image: './imgs/kotobakaze.png' },
     ],
   },
   {
     category: "Manga",
     items: [
-      "Kimi to Tsuzuru Utakata (The summer you were there)",
-      "Sasayaku you ni Koi wo Utau (Whisper Me a Love Song)",
-      "Watashi no oshi wa Akuyaku Reijou (I'm in love with the Villainess)",
+      { name: "The Summer You Were There", image: './imgs/summer.png' },
+      { name: "Whisper Me a Love Song", image: './imgs/sasayaku.png' },
+      { name: "I'm in Love with the Villainess", image: './imgs/villainess.png' },
     ],
   },
 ];
 
-const YOUTUBE_VIDEO_ID = "o4AS22B_9vU";
+const categoryIcon: Record<string, string> = {
+  Game: "🎮",
+  Anime: "🌸",
+  Music: "🎵",
+  Manga: "📖",
+};
+
+const photos = [
+  {
+    aspect: "aspect-square",
+    caption:
+      "Found this tiny ramen spot down an alley at midnight. No English menu, best bowl I've ever had. Some things you just have to stumble into.",
+  },
+  {
+    aspect: "aspect-square",
+    caption:
+      "Early morning at Doi Suthep. Got there before the crowds and just sat with the view for an hour. No phone, no photos — except this one.",
+  },
+  {
+    aspect: "aspect-square",
+    caption:
+      "My usual coffee corner on a rainy Tuesday. Good book, good brew, nowhere to be.",
+  },
+];
 
 export default function Interests() {
   return (
@@ -164,7 +195,7 @@ export default function Interests() {
             {hobbies.map(({ emoji, title, description }) => (
               <div
                 key={title}
-                className="group bg-white rounded-2xl border border-gray-100 p-7 hover:border-gray-300 hover:-translate-y-0.5 transition-all duration-300"
+                className="group bg-white rounded-2xl border border-gray-100 p-7 hover:border-indigo-500 hover:-translate-y-0.5 transition-all duration-300"
               >
                 <span className="text-2xl mb-5 block">{emoji}</span>
                 <h3 className="text-base font-medium text-gray-900 mb-2">
@@ -188,24 +219,50 @@ export default function Interests() {
             </span>
             <span className="flex-1 h-px bg-gray-200" />
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-10">
+
+          <div className="flex flex-col gap-16">
             {favorites.map(({ category, items }) => (
               <div key={category}>
-                <p className="text-[10px] tracking-[0.16em] uppercase text-indigo-500 font-bold mb-5">
-                  {category}
-                </p>
-                <ul className="flex flex-col gap-3">
-                  {items.map((item, i) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="text-[10px] text-indigo-500 mt-1 shrink-0">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-sm font-light text-gray-600 leading-snug">
-                        {item}
-                      </span>
-                    </li>
+                {/* Category label */}
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="text-base">{categoryIcon[category]}</span>
+                  <span className="text-sm font-bold text-indigo-500 tracking-wide">
+                    {category}
+                  </span>
+                  <span className="flex-1 h-px bg-gray-200" />
+                  <span className="text-[10px] tracking-widest uppercase text-gray-300">
+                    {items.length} items
+                  </span>
+                </div>
+
+                {/* App icon grid */}
+                <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4">
+                  {items.map(({ name, image }) => (
+                    <div
+                      key={name}
+                      className="flex flex-col items-center gap-2 group"
+                    >
+                      {/* Square icon */}
+                      <div className="w-full aspect-square rounded-2xl bg-gray-200 border border-gray-100 overflow-hidden flex items-center justify-center group-hover:border-indigo-500 group-hover:shadow-sm transition-all duration-200">
+                        {image ? (
+                          <img
+                            src={image}
+                            alt={name}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <span className="text-2xl select-none">
+                            {categoryIcon[category]}
+                          </span>
+                        )}
+                      </div>
+                      {/* Name label */}
+                      <p className="text-[12px] text-center text-gray-600 font-light leading-tight line-clamp-2 w-full">
+                        {name}
+                      </p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -216,40 +273,46 @@ export default function Interests() {
       <section className="py-28 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-16">
-            <span className="text-xs tracking-[0.18em] uppercase text-gray-400">
-              Captured moments
+            <span className="text-sm tracking-[0.18em] uppercase text-black font-bold">
+              My Favorite Moments
             </span>
             <span className="flex-1 h-px bg-gray-200" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              "aspect-square",
-              "aspect-[3/4]",
-              "aspect-square",
-              "aspect-[4/3]",
-              "aspect-square",
-              "aspect-[3/4]",
-            ].map((aspect, i) => (
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {photos.map((photo, i) => (
               <div
                 key={i}
-                className={`${aspect} bg-gray-100 rounded-2xl border border-gray-100 flex items-center justify-center`}
+                className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:border-gray-200 hover:shadow-sm transition-all duration-300"
               >
-                <div className="flex flex-col items-center gap-2 text-gray-300 select-none pointer-events-none">
-                  <svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="0.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                  <span className="text-[10px]">Photo {i + 1}</span>
+                {/* Photo placeholder — swap with <Image> when ready */}
+                <div
+                  className={`${photo.aspect} bg-gray-100 w-full flex items-center justify-center relative overflow-hidden`}
+                >
+                  <div className="flex flex-col items-center gap-2 text-gray-300 select-none pointer-events-none">
+                    <svg
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="0.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    <span className="text-[10px]">Photo {i + 1}</span>
+                  </div>
+                </div>
+
+                {/* Post footer */}
+                <div className="px-5 pt-4 pb-5">
+                  <p className="text-[13px] font-light leading-[1.75] text-gray-500 mb-4">
+                    {photo.caption}
+                  </p>
                 </div>
               </div>
             ))}
