@@ -58,50 +58,56 @@ const favorites = [
   {
     category: "Game",
     items: [
-      { name: "Genshin Impact", image: './imgs/genshin.jpg' },
-      { name: "Honkai Star Rail", image: './imgs/starrail.jpg' },
-      { name: "Umamusume Pretty Derby", image: './imgs/umamusume.png' },
-      { name: "Project Sekai Colorful Stage", image: './imgs/pjsk.png' },
-      { name: "Zenless Zone Zero", image: './imgs/zzz.png' },
-      { name: "Red Dead Redemption 2", image: './imgs/rdr2.jpg' },
-      { name: "Call of Duty", image: './imgs/cod.png' },
-      { name: "Stardew Valley", image: './imgs/stardew.png' },
-      { name: "FIFA", image: './imgs/fifa.png' },
-      { name: "F1", image: './imgs/f1.jpg' },
+      { name: "Genshin Impact", image: "./imgs/genshin.jpg" },
+      { name: "Honkai Star Rail", image: "./imgs/starrail.jpg" },
+      { name: "Umamusume Pretty Derby", image: "./imgs/umamusume.png" },
+      { name: "Project Sekai Colorful Stage", image: "./imgs/pjsk.png" },
+      { name: "Zenless Zone Zero", image: "./imgs/zzz.png" },
+      { name: "Red Dead Redemption 2", image: "./imgs/rdr2.jpg" },
+      { name: "Call of Duty", image: "./imgs/cod.png" },
+      { name: "Stardew Valley", image: "./imgs/stardew.png" },
+      { name: "FIFA", image: "./imgs/fifa.png" },
+      { name: "F1", image: "./imgs/f1.jpg" },
     ],
   },
   {
     category: "Anime",
     items: [
-      { name: "Love Live! School Idol Project", image: './imgs/lovelive.jpg' },
-      { name: "Kimetsu no Yaiba", image: './imgs/kny.png' },
-      { name: "Lycoris Recoil", image: './imgs/lycoreco.png' },
-      { name: "Sword Art Online", image: './imgs/sao.png' },
-      { name: "Madoka Magica", image: './imgs/madoka.png' },
-      { name: "Re:Zero", image: './imgs/rezero.jpg' },
-      { name: "Kantai Collection", image: './imgs/kancolle.jpg' },
-      { name: "Tensei oujo to Tensai reijou no Mahou Kakumei", image: './imgs/tensaitensei.jpg' },
+      { name: "Love Live! School Idol Project", image: "./imgs/lovelive.jpg" },
+      { name: "Kimetsu no Yaiba", image: "./imgs/kny.png" },
+      { name: "Lycoris Recoil", image: "./imgs/lycoreco.png" },
+      { name: "Sword Art Online", image: "./imgs/sao.png" },
+      { name: "Madoka Magica", image: "./imgs/madoka.png" },
+      { name: "Re:Zero", image: "./imgs/rezero.jpg" },
+      { name: "Kantai Collection", image: "./imgs/kancolle.jpg" },
+      {
+        name: "Tensei oujo to Tensai reijou no Mahou Kakumei",
+        image: "./imgs/tensaitensei.jpg",
+      },
     ],
   },
   {
     category: "Music",
     items: [
-      { name: "D/N/A", image: './imgs/dna.jpg' },
-      { name: "Engeki", image: './imgs/engeki.jpg' },
-      { name: "Stay on Course", image: './imgs/janii.jpg' },
-      { name: "Supernova", image: './imgs/supernova.jpg' },
-      { name: "Cinema", image: './imgs/cinema.jpg' },
-      { name: "Regulus", image: './imgs/regulus.png' },
-      { name: "Eyelid", image: './imgs/eyelid.jpg' },
-      { name: "Kotobakaze", image: './imgs/kotobakaze.png' },
+      { name: "D/N/A", image: "./imgs/dna.jpg" },
+      { name: "Engeki", image: "./imgs/engeki.jpg" },
+      { name: "Stay on Course", image: "./imgs/janii.jpg" },
+      { name: "Supernova", image: "./imgs/supernova.jpg" },
+      { name: "Cinema", image: "./imgs/cinema.jpg" },
+      { name: "Regulus", image: "./imgs/regulus.png" },
+      { name: "Eyelid", image: "./imgs/eyelid.jpg" },
+      { name: "Kotobakaze", image: "./imgs/kotobakaze.png" },
     ],
   },
   {
     category: "Manga",
     items: [
-      { name: "The Summer You Were There", image: './imgs/summer.png' },
-      { name: "Whisper Me a Love Song", image: './imgs/sasayaku.png' },
-      { name: "I'm in Love with the Villainess", image: './imgs/villainess.png' },
+      { name: "The Summer You Were There", image: "./imgs/summer.png" },
+      { name: "Whisper Me a Love Song", image: "./imgs/sasayaku.png" },
+      {
+        name: "I'm in Love with the Villainess",
+        image: "./imgs/villainess.png",
+      },
     ],
   },
 ];
@@ -115,19 +121,22 @@ const categoryIcon: Record<string, string> = {
 
 const photos = [
   {
-    aspect: "aspect-square",
+    aspect: "aspect-4/5",
+    img: './imgs/moments-memes/wrong-shoes.jpg',
     caption:
-      "Found this tiny ramen spot down an alley at midnight. No English menu, best bowl I've ever had. Some things you just have to stumble into.",
+      "When you work too hard and your brain fried, and here I am, wearing wrong pair of shoes to work, luckily I noticed it before I got on the bus lol.",
   },
   {
-    aspect: "aspect-square",
+    aspect: "aspect-4/5",
+    img: './imgs/moments-memes/animonium.jpg',
     caption:
-      "Early morning at Doi Suthep. Got there before the crowds and just sat with the view for an hour. No phone, no photos — except this one.",
+      "First time going to an anime exhibition as an exhibitor. Like holy- I have to stay until almost midnight DURING WEEKENDS after I've been at the convention since 8 in the morning... man.",
   },
   {
-    aspect: "aspect-square",
+    aspect: "aspect-4/5",
+    img: './imgs/moments-memes/haruwinarima.jpg',
     caption:
-      "My usual coffee corner on a rainy Tuesday. Good book, good brew, nowhere to be.",
+      "I FINALLY GOT MY BABY HARU URARA TO WIN ARIMA KINEN, OMG ;^; (With the power of the clock and long and turf sparks I got from Orfevre & Seiun Sky)",
   },
 ];
 
@@ -274,7 +283,7 @@ export default function Interests() {
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-16">
             <span className="text-sm tracking-[0.18em] uppercase text-black font-bold">
-              My Favorite Moments
+              My Favorite Moments & Memes
             </span>
             <span className="flex-1 h-px bg-gray-200" />
           </div>
@@ -290,20 +299,10 @@ export default function Interests() {
                   className={`${photo.aspect} bg-gray-100 w-full flex items-center justify-center relative overflow-hidden`}
                 >
                   <div className="flex flex-col items-center gap-2 text-gray-300 select-none pointer-events-none">
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="0.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21 15 16 10 5 21" />
-                    </svg>
+                    <img
+                      src={photo.img}
+                      className="w-full h-full object-cover"
+                    />
                     <span className="text-[10px]">Photo {i + 1}</span>
                   </div>
                 </div>
