@@ -17,13 +17,42 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    // Replace with your form handler (e.g. Formspree, Resend, etc.)
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("sent");
+
+    try {
+      const res = await fetch(
+        "https://formsubmit.co/ajax/naiyana.nk14@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            message: form.message,
+            _subject: "Message From Portfolio Website Contact Form",
+            _captcha: "true",
+            _honey: "",
+          }),
+        },
+      );
+
+      if (res.ok) {
+        setStatus("sent");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
-    <section id="contact" className="py-28 px-6 lg:px-8 bg-gray-50 border-t border-gray-100 scroll-mt-10">
+    <section
+      id="contact"
+      className="py-28 px-6 lg:px-8 bg-gray-50 border-t border-gray-100 scroll-mt-10"
+    >
       <style>{`
         .contact-input {
           width: 100%;
@@ -72,16 +101,13 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left — CTA copy */}
           <div>
-            <h2
-              className="text-5xl sm:text-6xl leading-[1.1] text-gray-900 mb-6"
-            >
+            <h2 className="text-5xl sm:text-6xl leading-[1.1] text-gray-900 mb-6">
               Let&apos;s work
               <br />
               <em className="text-indigo-400">together.</em>
             </h2>
             <p className="text-base font-light leading-[1.9] text-gray-600 mb-10">
-              Want to say hi? My inbox is always
-              open  — <br />
+              Want to say hi? My inbox is always open — <br />
               I&apos;ll get back to you as soon as I can.
             </p>
 
@@ -93,7 +119,11 @@ export default function Contact() {
                   value: "naiyana.nk14@gmail.com",
                   href: "mailto:naiyana.nk14@gmail.com",
                 },
-                { label: "GitHub", value: "github.com/naiyana-nk", href: "https://github.com/naiyana-nk" },
+                {
+                  label: "GitHub",
+                  value: "github.com/naiyana-nk",
+                  href: "https://github.com/naiyana-nk",
+                },
                 {
                   label: "LinkedIn",
                   value: "linkedin.com/in/naiyana-nk",
@@ -125,12 +155,10 @@ export default function Contact() {
           <div>
             {status === "sent" ? (
               <div className="flex flex-col items-start gap-3 py-12">
-                <span
-                  className="text-2xl"
-                >
-                  Message sent ✦
+                <span className="text-2xl font-bold">
+                  Message sent <span className="text-indigo-500">✦</span>
                 </span>
-                <p className="text-sm text-gray-400 font-light">
+                <p className="text-sm text-indigo-500 font-light">
                   Thanks for reaching out — I&apos;ll be in touch soon.
                 </p>
                 <button
@@ -145,6 +173,13 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <input
+                  type="text"
+                  name="_honey"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
                 <input
                   className="contact-input"
                   type="text"
