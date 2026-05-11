@@ -3,20 +3,57 @@
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Dashboard",
+    title: "Corporate Website",
     description:
       "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-    techStack: ["Next.js", "Tailwind CSS", "Prisma", "PostgreSQL"],
-    liveUrl: "#",
-    githubUrl: "#",
+    image: "./imgs/corporate-web.png",
+    techStack: ["HTML5", "CSS3", "JavaScript", "Google Analytics"],
+    liveUrl: "https://beblock-bangkok.co.th/",
+  },
+  {
+    id: 2,
+    title: "Custom Acrylic E-commerce Website",
+    description:
+      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+    image: "./imgs/acryl-prod.png",
+    techStack: ["HTML5", "CSS3", "JavaScript", "Google App Scripts", "Google Analytics"],
+    liveUrl: "https://acryltatsujin-th.com/",
+  },
+  {
+    id: 3,
+    title: "Firewall Log Analytic With Generative AI Website",
+    description:
+      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+    image: "./imgs/firewall-proj.png",
+    techStack: ["Vue.js", "Vuetify", "Python", "SQL", "FastAPI", "Uvicorn", "Gemini 1.5 Flash"],
+    liveUrl: "https://drive.google.com/file/d/1iC2E2ghWqTiEp5ypoVh5ASoWhAxeV33c/view?usp=drive_link",
+  },
+  {
+    id: 4,
+    title: "Automate Bed Management System",
+    description:
+      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+    image: "./imgs/abms.png",
+    techStack: ["Microsoft Power Automate", "Microsoft Forms", "Microsoft Excel"],
+    liveUrl: "https://www.youtube.com/watch?v=_CL5Ty9P2vg",
+  },
+  {
+    id: 5,
+    title: "Monozukuri Sunshine Website",
+    description:
+      "A full-stack dashboard for managing online store inventory, tracking sales, and processing Stripe payments.",
+    image: "./imgs/monozukuri.png",
+    techStack: ["Wordpress",],
+    liveUrl: "https://monozukurisunshine.wordpress.com/",
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28 px-6 lg:px-8 bg-white border-t border-gray-100 scroll-mt-10">
+    <section
+      id="projects"
+      className="py-28 px-6 lg:px-8 bg-white border-t border-gray-100 scroll-mt-10"
+    >
       <div className="max-w-5xl mx-auto">
         {/* Section label */}
         <div className="flex items-center gap-4 mb-16 about-fade-in">
@@ -71,16 +108,16 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="text-xs tracking-widest uppercase text-indigo-500 hover:text-gray-900 transition-colors"
                   >
-                    Link {'>'}
+                    Link {">"}
                   </a>
-                  <a
+                  {/* <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs tracking-widest uppercase text-gray-400 hover:text-gray-900 transition-colors"
                   >
                     GitHub
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

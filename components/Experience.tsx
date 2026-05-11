@@ -8,8 +8,15 @@ const experiences = [
     period: "2025 — Present",
     type: "Full-time",
     description:
-      "Building and maintaining client-facing web applications using Next.js and Node.js. Led the migration of a legacy PHP system to a modern React stack, reducing load times by 60%.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Node.js", "Google Script Apps", "Google Sheets"],
+      "Design, develop and maintain web applications for a made-to-order ecommerce website for B2C customers with automation workflows using Google Apps Scripts and create responsive interfaces with interactive Canvas-Based components and real-time data visualization with production environments on AWS EC2 with 99%+ uptime cross browser compatibility and SEO best practices.",
+    tags: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Google Script Apps",
+      "Google Sheets",
+      "Google Analytics",
+    ],
   },
   {
     id: 2,
@@ -18,8 +25,16 @@ const experiences = [
     period: "2024 — 2025",
     type: "Internship",
     description:
-      "Designed and built responsive marketing sites and e-commerce storefronts for clients across retail and hospitality. Collaborated closely with designers to bring Figma mockups to life.",
-    tags: ["Vue.js", "Vuetify", "Python", "SQL", "Oracle Database", "FastAPI", "Uvicorn"],
+      "Provided technical support by troubleshooting software and hardware issues while assisting in monitoring and maintaining database and implemented an AI-based firewall log analysis system to provide insights and recommendations for firewall network security and performance.",
+    tags: [
+      "Vue.js",
+      "Vuetify",
+      "Python",
+      "SQL",
+      "FastAPI",
+      "Uvicorn",
+      "Gemini 1.5 Flash",
+    ],
   },
 ];
 
@@ -85,9 +100,7 @@ export default function Experience() {
                 <p className="text-sm font-light text-gray-500 mb-1">
                   {exp.period}
                 </p>
-                <p
-                  className="text-lg font-medium text-indigo-500"
-                >
+                <p className="text-lg font-medium text-indigo-500">
                   {exp.company}
                 </p>
                 <span className="exp-type">{exp.type}</span>
