@@ -2,6 +2,7 @@
 
 import { use, useState } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
+import Link from 'next/link'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -67,6 +68,9 @@ export default function Header() {
           <a href="/#contact" className={navLinkStyles}>
             Contact
           </a>
+          <Link href="/personal-space" className={navLinkStyles}>
+            " Personal Space "
+          </Link>
         </PopoverGroup>
       </nav>
 
@@ -124,6 +128,9 @@ export default function Header() {
                 <a href="/#contact" className={`w-fit ${navLinkStyles} py-2`} onClick={() => setMobileMenuOpen(false)}>
                   Contact
                 </a>
+                <Link href="/personal-space" className={`w-fit ${navLinkStyles} py-2`} onClick={() => setMobileMenuOpen(false)}>
+                  " Personal Space "
+                </Link>
               </div>
             </div>
           </div>
