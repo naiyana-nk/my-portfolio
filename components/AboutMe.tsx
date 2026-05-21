@@ -94,8 +94,8 @@ export default function AboutMe() {
             </p>
             <p className="text-base leading-[1.9] text-gray-600 font-light mb-10">
               I&apos;m currently looking for new opportunities to contribute my
-              skills and grow as a developer. Especially in the field of AI and
-              machine learning, or Robotic Process Automation (RPA). If you have
+              skills and grow as a developer. Especially in the field of <b className="text-indigo-500 font-bold">AI and
+              machine learning,</b> or <b className="text-indigo-500 font-bold">Robotic Process Automation (RPA)</b>. If you have
               any opportunities or would like to connect, please feel free to
               reach out to me through the contact links below. I&apos;m excited
               to collaborate and create amazing things together!
