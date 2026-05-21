@@ -2,6 +2,37 @@
 
 import { useState } from "react";
 
+const email = "naiyana.nk14" + "@" + "gmail.com";
+
+const contactLinks = [
+  {
+    label: "Email",
+    value: email,
+    href: "mailto:" + email,
+    onClick: undefined,
+  },
+  {
+    label: "GitHub",
+    value: "github.com/naiyana-nk",
+    href: "https://github.com/naiyana-nk",
+    onClick: undefined,
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/naiyana-nk",
+    href: "https://linkedin.com/in/naiyana-nk",
+    onClick: undefined,
+  },
+  {
+    label: "Tel.",
+    value: "(+66) 092-727-7885",
+    href: "#",
+    onClick: () => {
+      window.location.href = "tel:+66927277885";
+    },
+  },
+];
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
@@ -19,24 +50,21 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      const res = await fetch(
-        "https://formsubmit.co/ajax/naiyana.nk14@gmail.com",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            name: form.name,
-            email: form.email,
-            message: form.message,
-            _subject: "Message From Portfolio Website Contact Form",
-            _captcha: "true",
-            _honey: "",
-          }),
+      const res = await fetch("https://formsubmit.co/ajax/" + email, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-      );
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          _subject: "Message From Portfolio Website Contact Form",
+          _captcha: "true",
+          _honey: "",
+        }),
+      });
 
       if (res.ok) {
         setStatus("sent");
@@ -113,36 +141,17 @@ export default function Contact() {
 
             {/* Direct links */}
             <div className="flex flex-col gap-4">
-              {[
-                {
-                  label: "Email",
-                  value: "naiyana.nk14@gmail.com",
-                  href: "mailto:naiyana.nk14@gmail.com",
-                },
-                {
-                  label: "GitHub",
-                  value: "github.com/naiyana-nk",
-                  href: "https://github.com/naiyana-nk",
-                },
-                {
-                  label: "LinkedIn",
-                  value: "linkedin.com/in/naiyana-nk",
-                  href: "https://linkedin.com/in/naiyana-nk",
-                },
-                {
-                  label: "Tel.",
-                  value: "(+66) 092-727-7885",
-                  href: "tel:+66927277885",
-                },
-              ].map(({ label, value, href }) => (
+              {contactLinks.map(({ label, value, href, onClick }) => (
                 <div key={label} className="flex items-center gap-4">
                   <span className="text-[10px] tracking-[0.16em] uppercase text-indigo-500 font-bold w-16 shrink-0">
                     {label}
                   </span>
                   <a
                     href={href}
+                    onClick={onClick}
                     className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-light"
-                    target="_blank"
+                    target={onClick ? undefined : "_blank"}
+                    rel="noopener noreferrer"
                   >
                     {value}
                   </a>
