@@ -12,7 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const YOUTUBE_VIDEO_ID = "o4AS22B_9vU";
+// Song at the moment
+const YOUTUBE_VIDEO_ID = "7-7knsP2n5w";
+const momentNote =
+  "The World Cup 2026 is about to start and the news of Shakira singing yet another world cup has been announced. So here I am, back to the song of my first ever World Cup I watched";
 
 const hobbies = [
   {
@@ -263,7 +266,7 @@ export default function Interests() {
             The stuff I care about{" "}
             <em className="text-indigo-500">outside work.</em>
           </h1>
-          <p className="text-base font-light leading-[1.9] text-gray-400 max-w-xl">
+          <p className="text-base font-light leading-[1.9] text-gray-500 max-w-xl">
             Work is a big part of who I am, but not all of it. Here&apos;s a
             glimpse into how I spend my time when I&apos;m not building things
             on a screen.
@@ -276,7 +279,7 @@ export default function Interests() {
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-12">
             <span className="text-sm tracking-[0.18em] uppercase text-black font-bold">
-              Music of the moment
+              Music I'm addicted to Recently
             </span>
             <span className="flex-1 h-px bg-gray-200" />
           </div>
@@ -292,6 +295,10 @@ export default function Interests() {
               />
             </div>
           </div>
+          <p className="text-sm font-light leading-[1.5] text-gray-500 text-center pt-6">
+            <span className="text-md text-indigo-500 font-bold">📝 Note: </span>
+            {momentNote}
+          </p>
         </div>
       </section>
 
@@ -314,7 +321,7 @@ export default function Interests() {
                 <h3 className="text-base font-medium text-gray-900 mb-2">
                   {title}
                 </h3>
-                <p className="text-sm font-light leading-[1.85] text-gray-400">
+                <p className="text-sm font-light leading-[1.85] text-gray-500">
                   {description}
                 </p>
               </div>
@@ -342,7 +349,7 @@ export default function Interests() {
                     {category}
                   </span>
                   <span className="flex-1 h-px bg-gray-200" />
-                  <span className="text-[10px] tracking-widest uppercase text-gray-300">
+                  <span className="text-[10px] tracking-widest uppercase text-gray-500">
                     {items.length} items
                   </span>
                 </div>
@@ -424,7 +431,7 @@ export default function Interests() {
             </span>
             <span className="flex-1 h-px bg-gray-200" />
           </div>
-          <p className="text-sm font-light text-gray-400 mb-16">
+          <p className="text-sm font-light text-gray-600 mb-16">
             Things I&apos;ve made outside of my day job — video edits,
             photography, writing, and whatever else I felt like making.
           </p>
@@ -483,7 +490,7 @@ export default function Interests() {
                   <h3 className="text-sm font-bold text-black mb-2 leading-snug">
                     {work.title}
                   </h3>
-                  <p className="text-xs font-light leading-[1.75] text-gray-400 flex-grow">
+                  <p className="text-xs font-light leading-[1.75] text-gray-500 flex-grow">
                     {work.description}
                   </p>
                   <div className="mt-4 flex items-center gap-1 text-indigo-500 text-xs font-medium">
@@ -543,7 +550,7 @@ export default function Interests() {
                   <p className="text-[10px] text-indigo-500 mb-2">
                     {photo.date}
                   </p>
-                  <p className="text-[13px] leading-[1.75] text-gray-400">
+                  <p className="text-[13px] leading-[1.75] text-gray-500">
                     {photo.caption}
                   </p>
                 </div>

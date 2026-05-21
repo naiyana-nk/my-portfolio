@@ -68,8 +68,8 @@ export default function Header() {
           <a href="/#contact" className={navLinkStyles}>
             Contact
           </a>
-          <Link href="/personal-space" className={navLinkStyles}>
-            Personal Space
+          <Link href="/get-to-know" className={navLinkStyles}>
+            Get to know
           </Link>
         </PopoverGroup>
       </nav>
@@ -128,8 +128,8 @@ export default function Header() {
                 <a href="/#contact" className={`w-fit ${navLinkStyles} py-2`} onClick={() => setMobileMenuOpen(false)}>
                   Contact
                 </a>
-                <Link href="/personal-space" className={`w-fit ${navLinkStyles} py-2`} onClick={() => setMobileMenuOpen(false)}>
-                  " Personal Space "
+                <Link href="/get-to-know" className={`w-fit ${navLinkStyles} py-2`} onClick={() => setMobileMenuOpen(false)}>
+                  Get to know
                 </Link>
               </div>
             </div>
