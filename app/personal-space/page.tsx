@@ -89,14 +89,46 @@ const favorites = [
   {
     category: "Music",
     items: [
-      { name: "D/N/A", image: "./imgs/dna.jpg" },
-      { name: "Engeki", image: "./imgs/engeki.jpg" },
-      { name: "Stay on Course", image: "./imgs/janii.jpg" },
-      { name: "Supernova", image: "./imgs/supernova.jpg" },
-      { name: "Cinema", image: "./imgs/cinema.jpg" },
-      { name: "Regulus", image: "./imgs/regulus.png" },
-      { name: "Eyelid", image: "./imgs/eyelid.jpg" },
-      { name: "Kotobakaze", image: "./imgs/kotobakaze.png" },
+      {
+        name: "D/N/A",
+        image: "./imgs/dna.jpg",
+        url: "https://www.youtube.com/watch?v=RyRfLSOewbU",
+      },
+      {
+        name: "Engeki",
+        image: "./imgs/engeki.jpg",
+        url: "https://www.youtube.com/watch?v=U_RhSRVL6GI",
+      },
+      {
+        name: "Stay on Course",
+        image: "./imgs/janii.jpg",
+        url: "https://www.youtube.com/watch?v=ybQ_ObZ9BaA",
+      },
+      {
+        name: "Supernova",
+        image: "./imgs/supernova.jpg",
+        url: "https://www.youtube.com/watch?v=2DGf-KlKXGA",
+      },
+      {
+        name: "Cinema",
+        image: "./imgs/cinema.jpg",
+        url: "https://www.youtube.com/watch?v=8m1cUgLepmY",
+      },
+      {
+        name: "Regulus",
+        image: "./imgs/regulus.png",
+        url: "https://www.youtube.com/watch?v=i8XnOZgtE34",
+      },
+      {
+        name: "Eyelid",
+        image: "./imgs/eyelid.jpg",
+        url: "https://www.youtube.com/watch?v=o4AS22B_9vU",
+      },
+      {
+        name: "Kotobakaze",
+        image: "./imgs/kotobakaze.png",
+        url: "https://www.youtube.com/watch?v=a8p0l7_h9Ys",
+      },
     ],
   },
   {
@@ -122,19 +154,22 @@ const categoryIcon: Record<string, string> = {
 const photos = [
   {
     aspect: "aspect-4/5",
-    img: './imgs/moments-memes/wrong-shoes.jpg',
+    img: "./imgs/moments-memes/wrong-shoes.jpg",
+    date: "28 April 2026",
     caption:
       "When you work too hard and your brain fried, and here I am, wearing wrong pair of shoes to work, luckily I noticed it before I got on the bus lol.",
   },
   {
     aspect: "aspect-4/5",
-    img: './imgs/moments-memes/animonium.jpg',
+    img: "./imgs/moments-memes/animonium.jpg",
+    date: "05 February 2026",
     caption:
       "First time going to an anime exhibition as an exhibitor. Like holy- I have to stay until almost midnight DURING WEEKENDS after I've been at the convention since 8 in the morning... man.",
   },
   {
     aspect: "aspect-4/5",
-    img: './imgs/moments-memes/haruwinarima.jpg',
+    img: "./imgs/moments-memes/haruwinarima.jpg",
+    date: "09 January 2026",
     caption:
       "I FINALLY GOT MY BABY HARU URARA TO WIN ARIMA KINEN, OMG ;^; (With the power of the clock and long and turf sparks I got from Orfevre & Seiun Sky)",
   },
@@ -232,7 +267,6 @@ export default function Interests() {
           <div className="flex flex-col gap-16">
             {favorites.map(({ category, items }) => (
               <div key={category}>
-                {/* Category label */}
                 <div className="flex items-center gap-3 mb-8">
                   <span className="text-base">{categoryIcon[category]}</span>
                   <span className="text-sm font-bold text-indigo-500 tracking-wide">
@@ -244,33 +278,67 @@ export default function Interests() {
                   </span>
                 </div>
 
-                {/* App icon grid */}
                 <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4">
-                  {items.map(({ name, image }) => (
-                    <div
-                      key={name}
-                      className="flex flex-col items-center gap-2 group"
-                    >
-                      {/* Square icon */}
-                      <div className="w-full aspect-square rounded-2xl bg-gray-200 border border-gray-100 overflow-hidden flex items-center justify-center group-hover:border-indigo-500 group-hover:shadow-sm transition-all duration-200">
-                        {image ? (
-                          <img
-                            src={image}
-                            alt={name}
-                            className="w-full h-full object-cover"
-                          />
+                  {items.map(
+                    ({
+                      name,
+                      image,
+                      url,
+                    }: {
+                      name: string;
+                      image: string | null;
+                      url?: string;
+                    }) => (
+                      <div
+                        key={name}
+                        className="flex flex-col items-center gap-2 group"
+                      >
+                        {url ? (
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full block"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.open(url, "_blank");
+                            }}
+                          >
+                            <div className="w-full aspect-square rounded-2xl bg-gray-200 border border-gray-100 overflow-hidden flex items-center justify-center group-hover:border-indigo-500 group-hover:shadow-sm transition-all duration-200">
+                              {image ? (
+                                <img
+                                  src={image}
+                                  alt={name}
+                                  className="w-full h-full object-cover pointer-events-none"
+                                />
+                              ) : (
+                                <span className="text-2xl select-none">
+                                  {categoryIcon[category]}
+                                </span>
+                              )}
+                            </div>
+                          </a>
                         ) : (
-                          <span className="text-2xl select-none">
-                            {categoryIcon[category]}
-                          </span>
+                          <div className="w-full aspect-square rounded-2xl bg-gray-200 border border-gray-100 overflow-hidden flex items-center justify-center group-hover:border-indigo-500 group-hover:shadow-sm transition-all duration-200">
+                            {image ? (
+                              <img
+                                src={image}
+                                alt={name}
+                                className="w-full h-full object-cover"
+                              />
+                            ) : (
+                              <span className="text-2xl select-none">
+                                {categoryIcon[category]}
+                              </span>
+                            )}
+                          </div>
                         )}
+                        <p className="text-[12px] text-center text-gray-600 font-light leading-tight line-clamp-2 w-full">
+                          {name}
+                        </p>
                       </div>
-                      {/* Name label */}
-                      <p className="text-[12px] text-center text-gray-600 font-light leading-tight line-clamp-2 w-full">
-                        {name}
-                      </p>
-                    </div>
-                  ))}
+                    ),
+                  )}
                 </div>
               </div>
             ))}
@@ -292,7 +360,7 @@ export default function Interests() {
             {photos.map((photo, i) => (
               <div
                 key={i}
-                className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:border-gray-200 hover:shadow-sm transition-all duration-300"
+                className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:border-indigo-500 hover:shadow-sm transition-all duration-300"
               >
                 {/* Photo placeholder — swap with <Image> when ready */}
                 <div
@@ -309,7 +377,10 @@ export default function Interests() {
 
                 {/* Post footer */}
                 <div className="px-5 pt-4 pb-5">
-                  <p className="text-[13px] font-light leading-[1.75] text-gray-500 mb-4">
+                  <p className="text-[10px] text-indigo-500 mb-2">
+                    {photo.date}
+                  </p>
+                  <p className="text-[13px] leading-[1.75] text-gray-600">
                     {photo.caption}
                   </p>
                 </div>
