@@ -24,8 +24,8 @@ export default function Header() {
           >
             <img
               alt="Logo"
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-              className="h-8 w-auto"
+              src="./imgs/logo-white.png"
+              className="h-12 w-auto"
             />
           </a>
         </div>
@@ -87,8 +87,8 @@ export default function Header() {
               <span className="sr-only">Your Company</span>
               <img
                 alt="Logo"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                className="h-8 w-auto"
+                src="./imgs/logo-white.png"
+                className="h-12 w-auto"
               />
             </a>
             <button
