@@ -69,7 +69,7 @@ export default function Header() {
             Contact
           </a>
           <Link href="/personal-space" className={navLinkStyles}>
-            " Personal Space "
+            Personal Space
           </Link>
         </PopoverGroup>
       </nav>
