@@ -93,7 +93,7 @@ export default function AboutMe() {
               grow as a developer.
             </p>
             <p className="text-base leading-[1.9] text-gray-600 font-light mb-10">
-              I&apos;m currently looking for new opportunities to contribute my
+              <b className="text-indigo-500 font-bold">I&apos;m currently looking for new opportunities</b> to contribute my
               skills and grow as a developer. Especially in the field of <b className="text-indigo-500 font-bold">AI and
               machine learning,</b> or <b className="text-indigo-500 font-bold">Robotic Process Automation (RPA)</b>. If you have
               any opportunities or would like to connect, please feel free to
@@ -124,7 +124,7 @@ export default function AboutMe() {
             {/* Photo */}
             <div className="avatar-ring relative rounded-2xl overflow-hidden border border-gray-100 bg-gray-50 aspect-[3/4] w-full flex items-center justify-center">
               <Image
-                src="/imgs/mypfp.jpg"
+                src="/imgs/myself.jpg"
                 alt="My Profile Picture"
                 fill
                 className="object-cover"
