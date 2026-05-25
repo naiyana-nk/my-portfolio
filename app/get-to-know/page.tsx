@@ -2,6 +2,7 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import Chatbot from "@/components/Chatbot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -561,6 +562,7 @@ export default function Interests() {
         </div>
       </section>
 
+      <Chatbot />
       <Analytics/> {/* Vercel Analytics */}
     </main>
   );

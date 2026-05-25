@@ -1,29 +1,73 @@
 "use client";
 
-import { useChat } from "@ai-sdk/react";
-import type { UIMessage } from "ai";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Chatbot() {
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const { messages, sendMessage } = useChat();
+  const [messages, setMessages] = useState<{ role: string; content: string }[]>(
+    [],
+  );
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  // Auto-scroll to bottom whenever messages change or loading state changes
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, isLoading]);
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!input.trim() || isLoading) return;
 
-    sendMessage({ text: input });
-
+    const userMessage = { role: "user", content: input };
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
     setInput("");
+    setIsLoading(true);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: updatedMessages }),
+      });
+
+      if (!res.body) throw new Error("No response body");
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let aiText = "";
+
+      setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        aiText += chunk;
+
+        setMessages((prev) => {
+          const newArr = [...prev];
+          const lastIndex = newArr.length - 1;
+          newArr[lastIndex] = { ...newArr[lastIndex], content: aiText };
+          return newArr;
+        });
+      }
+    } catch (error) {
+      console.error("Chat error:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (!isOpen) {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gray-900 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-800 transition-transform hover:scale-105 z-50"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-gray-800 text-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center hover:scale-105 transition-transform z-50"
         aria-label="Open chat"
       >
         <svg
@@ -45,13 +89,13 @@ export default function Chatbot() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 w-[350px] h-[500px] bg-white border border-gray-300 rounded-2xl shadow-2xl flex flex-col overflow-hidden z-50">
+    <div className="fixed bottom-6 right-6 w-[350px] h-[500px] bg-[#0a0a0a] border border-gray-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden z-50">
       {/* Header */}
-      <div className="bg-gray-900 text-white p-4 font-bold flex justify-between items-center">
-        <span>Chat with Oki's AI</span>
+      <div className="bg-[#111] text-white p-4 font-bold flex justify-between items-center border-b border-gray-800">
+        <span>Chat with Oki's AI Assistant</span>
         <button
           onClick={() => setIsOpen(false)}
-          className="hover:text-gray-300"
+          className="hover:text-gray-400"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -70,45 +114,62 @@ export default function Chatbot() {
         </button>
       </div>
 
-      {/* Chat Messages Area */}
-      <div className="flex-1 p-4 overflow-y-auto bg-gray-50 flex flex-col gap-3">
+      {/* Messages */}
+      <div
+        className="flex-1 p-4 overflow-y-auto bg-gray-900 flex flex-col gap-3"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
         {messages.length === 0 && (
           <p className="text-sm text-gray-500 text-center mt-4">
-            Hi! Ask me anything about Oki's skills or experience.
+            Hi! Ask anything about Oki's skills, experiences or even personal
+            interests!
           </p>
         )}
 
-        {/* Change (m: UIMessage) to (m: any) to bypass strict typing for a moment */}
-        {messages.map((m: any) => (
+        {messages.map((m, index) => (
           <div
-            key={m.id}
+            key={index}
             className={`p-3 rounded-2xl text-sm max-w-[85%] shadow-sm ${
-              m.role === 'user'
-                ? 'bg-blue-600 text-white self-end rounded-br-none'
-                : 'bg-white border border-gray-200 text-black self-start rounded-bl-none'
+              m.role === "user"
+                ? "bg-blue-600 text-white self-end rounded-br-none"
+                : "bg-[#1a1a1a] border border-gray-800 text-gray-100 self-start rounded-bl-none"
             }`}
           >
-            {/* This checks every possible place the SDK might be storing the text */}
-            {m.content || (m.parts && m.parts.map((part: any) => part.text).join('')) || JSON.stringify(m)}
+            {m.content}
           </div>
         ))}
+
+        {/* Typing bubble — shown while waiting for the stream to start */}
+        {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
+          <div className="bg-[#1a1a1a] border border-gray-800 text-gray-100 self-start rounded-2xl rounded-bl-none p-3 max-w-[85%] shadow-sm">
+            <span className="flex gap-1 items-center h-4">
+              <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:0ms]" />
+              <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:150ms]" />
+              <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:300ms]" />
+            </span>
+          </div>
+        )}
+
+        {/* Scroll anchor */}
+        <div ref={messagesEndRef} />
       </div>
 
-      {/* Input Form */}
+      {/* Input */}
       <form
         onSubmit={handleFormSubmit}
-        className="p-3 border-t border-gray-200 bg-white flex gap-2"
+        className="p-3 border-t border-gray-800 bg-[#111] flex gap-2"
       >
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask a question..."
-          className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-black"
+          disabled={isLoading}
+          placeholder={isLoading ? "AI is typing..." : "Ask a question..."}
+          className="flex-1 p-2 bg-[#1a1a1a] border border-gray-700 text-white rounded-lg focus:outline-none focus:border-gray-500 placeholder-gray-500 disabled:opacity-50"
         />
         <button
           type="submit"
-          disabled={!input.trim()}
-          className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={!input.trim() || isLoading}
+          className="bg-gray-800 text-white border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black hover:border-white transition-colors font-medium"
         >
           Send
         </button>
