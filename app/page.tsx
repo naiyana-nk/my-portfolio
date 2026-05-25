@@ -5,6 +5,7 @@ import WelcomeText from "@/components/WelcomeText";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
+import Chatbot from "@/components/Chatbot";
 import { Analytics } from "@vercel/analytics/next" 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Contact />
+        <Chatbot />
         <Analytics /> {/* Vercel Analytics */}
       </main>
     </div>

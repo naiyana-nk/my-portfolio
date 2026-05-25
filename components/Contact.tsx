@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 
-const email = "naiyana.nk14" + "@" + "gmail.com";
+const email = process.env.NEXT_PUBLIC_EMAIL;
+const tel = process.env.NEXT_PUBLIC_TEL;
+const telValue = process.env.NEXT_PUBLIC_TELVALUE;
 
 const contactLinks = [
   {
@@ -25,10 +27,10 @@ const contactLinks = [
   },
   {
     label: "Tel.",
-    value: "(+66) 092-727-7885",
+    value: telValue,
     href: "#",
     onClick: () => {
-      window.location.href = "tel:+66927277885";
+      window.location.href = `tel:${tel}`;
     },
   },
 ];
