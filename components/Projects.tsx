@@ -2,6 +2,14 @@
 
 const projects = [
   {
+    id: 6,
+    title: "My Expense Tracker - Spendly",
+    description: "To stop paying subscriptions just to use expense tracker without ads or features that are locked, I created this expense tracker for personal use.",
+    image: "./imgs/expense-tracker-project.jpg",
+    techStack: ["React Native", "TypeScript", "Expo SDK 56", "EAS CLI",],
+    liveUrl: "https://github.com/naiyana-nk/my-expense-tracker",
+  },
+  {
     id: 1,
     title: "Corporate Website",
     description:
@@ -75,7 +83,7 @@ export default function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top pointer-events-none"
                 />
               </div>
 
