@@ -129,7 +129,7 @@ export default function Experience() {
         {/* Download CV */}
         <div className="mt-12 flex items-center gap-4">
           <a
-            href="/files/naiyana-resume.pdf"
+            href="/files/naiyana-resume-fullstack.pdf"
             download
             className="text-xs font-bold tracking-widest uppercase border border-gray-300 rounded-full px-6 py-3 text-indigo-500 hover:bg-indigo-500 hover:text-white hover:border-indigo-500 transition-all duration-200"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
@@ -137,7 +137,7 @@ export default function Experience() {
             Download Resume
           </a>
           <span className="text-xs text-gray-600 font-light">
-            PDF, updated 08 June 2026
+            PDF, updated 10 June 2026
           </span>
         </div>
       </div>
