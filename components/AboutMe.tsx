@@ -77,13 +77,9 @@ export default function AboutMe() {
               <em className="text-indigo-500 text-5xl">Norkaew</em>
             </h2>
 
-            <p className="text-sm font-light tracking-widest text-black uppercase mb-8">
-              Full-Stack Developer &nbsp;
-            </p>
-
             {/* Bio */}
             <p className="text-base leading-[1.9] text-gray-600 font-light mb-5">
-              Hi, I&apos;m Naiyana, please call me Oki — a Thai developer who
+              Hi, I&apos;m Naiyana, please call me Oki — a Thai programmer who
               has passions for both logic and creativity. I enjoy building web
               applications using logics and create creative writings and
               artworks in my free time. I have a background in Information
@@ -95,7 +91,7 @@ export default function AboutMe() {
             <p className="text-base leading-[1.9] text-gray-600 font-light mb-10">
               <b className="text-indigo-500 font-bold">I&apos;m currently looking for new opportunities</b> to contribute my
               skills and grow as a developer. Especially in the field of <b className="text-indigo-500 font-bold">AI and
-              machine learning,</b> or <b className="text-indigo-500 font-bold">Robotic Process Automation (RPA)</b>. If you have
+              machine learning, Robotic Process Automation (RPA), Software Engineering</b> or <b className="text-indigo-500 font-bold">Full-Stack Developer</b>. If you have
               any opportunities or would like to connect, please feel free to
               reach out to me through the contact links below. I&apos;m excited
               to collaborate and create amazing things together!
