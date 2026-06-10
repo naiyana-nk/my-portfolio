@@ -20,7 +20,7 @@ const experiences = [
   },
   {
     id: 2,
-    role: "Cloud Engineer",
+    role: "Cloud Engineer & IT Support (Internship)",
     company: "A-HOST Co., Ltd.",
     period: "2024 — 2025",
     type: "Internship",
