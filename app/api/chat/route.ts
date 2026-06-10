@@ -35,7 +35,7 @@ AI/ML: Gemini 1.5 Flash (production use)
 ---
 
 ## EXPERIENCE
-**Web Developer — BeBlock Bangkok (2025–Present)**
+**Web & Automation Developer — BeBlock Bangkok (2025–Present)**
 Multilingual (TH/EN/JP) B2C e-commerce site for acrylic products. Google Apps Script automation, Canvas UI, AWS EC2 (99%+ uptime), SEO.
 
 **Cloud Engineer — A-HOST Co., Ltd. (2024–2025, Internship)**

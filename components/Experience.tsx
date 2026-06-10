@@ -3,7 +3,7 @@
 const experiences = [
   {
     id: 1,
-    role: "Web Developer",
+    role: "Web & Automation Developer",
     company: "BeBlock Bangkok Co., Ltd.",
     period: "2025 — Present",
     type: "Full-time",
