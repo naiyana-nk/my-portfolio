@@ -2,11 +2,21 @@
 
 const projects = [
   {
+    id: 7,
+    title: "AI Job Application Tracker",
+    description:
+      "AI Job Application Tracker is a job application tracker that uses AI to summarize job descriptions, tailor resumes, generate cover letters, and provide personalized job search advice through a built-in chatbot.",
+    image: "./imgs/job-tracker.png",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "OpenRouter API", "FastAPI", "uvicorn", "Supabase (PostgreSQL)", "Vercel (Frontend)", "Render (Backend)"],
+    liveUrl: "https://github.com/naiyana-nk/AI-Job-Tracker",
+  },
+  {
     id: 6,
     title: "My Expense Tracker - Spendly",
-    description: "To stop paying subscriptions just to use expense tracker without ads or features that are locked, I created this expense tracker for personal use.",
+    description:
+      "To stop paying subscriptions just to use expense tracker without ads or features that are locked, I created this expense tracker for personal use.",
     image: "./imgs/expense-tracker-project.jpg",
-    techStack: ["React Native", "TypeScript", "Expo SDK 56", "EAS CLI",],
+    techStack: ["React Native", "TypeScript", "Expo SDK 56", "EAS CLI"],
     liveUrl: "https://github.com/naiyana-nk/my-expense-tracker",
   },
   {
@@ -24,7 +34,13 @@ const projects = [
     description:
       "A Multilingual E-commerce website for BeBlock Bangkok, featuring a custom product builder that allows customers to design and customize their own acrylic products with automated order management for the staffs.",
     image: "./imgs/acryl-prod.png",
-    techStack: ["HTML5", "CSS3", "JavaScript", "Google App Scripts", "Google Analytics"],
+    techStack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Google App Scripts",
+      "Google Analytics",
+    ],
     liveUrl: "https://acryltatsujin-th.com/",
   },
   {
@@ -33,8 +49,17 @@ const projects = [
     description:
       "A dashboard for analyzing firewall logs using generative AI to provide insights and recommendations for network security and performance and download a full monthly report to reduce work hour for staffs.",
     image: "./imgs/firewall-proj.png",
-    techStack: ["Vue.js", "Vuetify", "Python", "SQL", "FastAPI", "Uvicorn", "Gemini 1.5 Flash"],
-    liveUrl: "https://drive.google.com/file/d/1iC2E2ghWqTiEp5ypoVh5ASoWhAxeV33c/view?usp=drive_link",
+    techStack: [
+      "Vue.js",
+      "Vuetify",
+      "Python",
+      "SQL",
+      "FastAPI",
+      "Uvicorn",
+      "Gemini 1.5 Flash",
+    ],
+    liveUrl:
+      "https://drive.google.com/file/d/1iC2E2ghWqTiEp5ypoVh5ASoWhAxeV33c/view?usp=drive_link",
   },
   {
     id: 4,
@@ -42,7 +67,11 @@ const projects = [
     description:
       "An automated dashboard and workflow for managing hospital bed availability, patient admissions, and discharges using Microsoft Power Automate, Forms, and Excel to streamline the bed management process and improve efficiency.",
     image: "./imgs/abms.png",
-    techStack: ["Microsoft Power Automate", "Microsoft Forms", "Microsoft Excel"],
+    techStack: [
+      "Microsoft Power Automate",
+      "Microsoft Forms",
+      "Microsoft Excel",
+    ],
     liveUrl: "https://www.youtube.com/watch?v=_CL5Ty9P2vg",
   },
   {
@@ -51,7 +80,7 @@ const projects = [
     description:
       "A blog website project for introducing the concept of monozukuri, a Japanese term that means 'the art of making things', sharing the stories of my favorite anime as a theme and how it was made using Wordpress as the CMS.",
     image: "./imgs/monozukuri.png",
-    techStack: ["Wordpress",],
+    techStack: ["Wordpress"],
     liveUrl: "https://monozukurisunshine.wordpress.com/",
   },
 ];
