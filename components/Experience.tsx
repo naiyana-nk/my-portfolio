@@ -137,7 +137,7 @@ export default function Experience() {
             Download Resume
           </a>
           <span className="text-xs text-gray-600 font-light">
-            PDF, updated 10 June 2026
+            PDF, updated 22 June 2026
           </span>
         </div>
       </div>
