@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 // Song at the moment
-const YOUTUBE_VIDEO_ID = "7-7knsP2n5w";
+const YOUTUBE_VIDEO_ID = "ozHy6NZLzAk";
 const momentNote =
-  "The World Cup 2026 is about to start and the news of Shakira singing yet another world cup has been announced. So here I am, back to the song of my first ever World Cup I watched";
+  "GOLD TRIUMPH, of course for the golden week of Japan, and Cybergame released the new song including the Golden Family (I like Journey's part so much that I got goosebumps";
 
 const hobbies = [
   {
@@ -132,6 +132,11 @@ const favorites = [
         name: "Kotobakaze",
         image: "./imgs/kotobakaze.png",
         url: "https://www.youtube.com/watch?v=a8p0l7_h9Ys",
+      },
+      {
+        name: "Kataomoi",
+        image: "./imgs/kataomoi.jpg",
+        url: "https://youtu.be/kxs9Su_mbpU?si=avQFl9p2J1BvdU2b",
       },
     ],
   },
