@@ -47,11 +47,11 @@ AI/ML: Gemini 1.5 Flash (production use)
 ---
 
 ## EXPERIENCE
-**Web & Automation Developer — BeBlock Bangkok (2025–Present)**
+**Web Designer — BeBlock Bangkok (2025–Present)**
 Multilingual (TH/EN/JP) B2C e-commerce site for acrylic products. Google Apps Script automation, Canvas UI, AWS EC2 (99%+ uptime), SEO.
 
-**Cloud Engineer & IT Support — A-HOST Co., Ltd. (2024–2025, Internship)**
-DB monitoring, tech support, AI firewall log analysis system using Gemini 1.5 Flash.
+**Cloud Engineer — A-HOST Co., Ltd. (2024–2025, Internship)**
+DB monitoring, tech support, Automation AI-assisted firewall log analysis report system using Gemini 1.5 Flash.
 
 ---
 
@@ -88,7 +88,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = await streamText({
-    model: openrouter("owl-alpha"),
+    model: openrouter("nvidia/nemotron-3-ultra-550b-a55b:free"),
     system: systemPrompt,
     messages: messages,
   });

@@ -4,25 +4,29 @@ import Image from "next/image";
 
 export default function AboutMe() {
   const skills = [
+    "Python",
+    "SQL",
+    "Microsoft Power Automate",
+    "Google Script Apps",
     "HTML5",
     "CSS3",
     "JavaScript",
-    "Python",
-    "SQL",
     "Next.js",
-    "React",
     "TypeScript",
-    "Java",
-    "C#",
     "Git",
-    "Google Script Apps",
     "Adobe Photoshop",
     "Adobe Illustrator",
     "Adobe Premiere Pro",
+    "Adobe Audition",
+    "FL Studio",
+    "Davinci Resolve",
   ];
 
   return (
-    <section id="about" className="about-section py-28 px-6 lg:px-8 bg-white border-t border-gray-100 scroll-mt-10">
+    <section
+      id="about"
+      className="about-section py-28 px-6 lg:px-8 bg-white border-t border-gray-100 scroll-mt-10"
+    >
       <style>{`
         .about-fade-in {
           animation: aboutFadeUp 0.7s ease forwards;
@@ -79,22 +83,35 @@ export default function AboutMe() {
 
             {/* Bio */}
             <p className="text-base leading-[1.9] text-gray-600 font-light mb-5">
-              Hi, I&apos;m Naiyana, please call me Oki — a Thai programmer who
-              has passions for both logic and creativity. I enjoy building web
-              applications using logics and create creative writings and
-              artworks in my free time. I have a background in Information
-              Technology and have experience working with various programming
-              languages and frameworks. I&apos;m always eager to learn new
-              technologies and take on challenging projects that allow me to
-              grow as a developer.
+              Hi, I&apos;m Naiyana, but you can call me Oki — a Thai Software
+              Engineer with a{" "}
+              <b className="text-indigo-500 font-bold">
+                passion for both logic and creativity.
+              </b> {" "}
+              I enjoy turning ideas into practical solutions, exploring new
+              technologies, and creating stories or artwork in my free time.
+              <br></br>
+              <b className="text-indigo-500 font-bold">I learn best by building.</b>{" "} Whether it's developing web
+              applications, automating workflows, or experimenting with AI, I
+              enjoy understanding how things work and bringing ideas to life
+              through real projects. I'm currently growing my expertise in AI,
+              automation, and cloud technologies while continuously learning
+              through hands-on experience.
             </p>
             <p className="text-base leading-[1.9] text-gray-600 font-light mb-10">
-              <b className="text-indigo-500 font-bold">I&apos;m currently looking for new opportunities</b> to contribute my
-              skills and grow as a developer. Especially in the field of <b className="text-indigo-500 font-bold">AI and
-              machine learning, Robotic Process Automation (RPA), Software Engineering</b> or <b className="text-indigo-500 font-bold">Full-Stack Developer</b>. If you have
-              any opportunities or would like to connect, please feel free to
-              reach out to me through the contact links below. I&apos;m excited
-              to collaborate and create amazing things together!
+              <b className="text-indigo-500 font-bold">
+                I&apos;m currently looking for new opportunities
+              </b>{" "}
+              to contribute my skills and grow as a developer. Especially in the
+              field of{" "}
+              <b className="text-indigo-500 font-bold">
+                Robotic Process Automation (RPA), Automation, and Data
+                Engineering,
+              </b>{" "}
+              If you have any opportunities or would like to connect, please
+              feel free to reach out to me through the contact links below.
+              I&apos;m excited to collaborate and create amazing things
+              together!
             </p>
 
             {/* Skills */}
@@ -120,7 +137,7 @@ export default function AboutMe() {
             {/* Photo */}
             <div className="avatar-ring relative rounded-2xl overflow-hidden border border-gray-100 bg-gray-50 aspect-[3/4] w-full flex items-center justify-center">
               <Image
-                src="/imgs/myself.jpg"
+                src="/imgs/3.jpg"
                 alt="My Profile Picture"
                 fill
                 className="object-cover"

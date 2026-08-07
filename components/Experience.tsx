@@ -3,12 +3,12 @@
 const experiences = [
   {
     id: 1,
-    role: "Web & Automation Developer",
+    role: "Web Designer",
     company: "BeBlock Bangkok Co., Ltd.",
-    period: "2025 — Present",
+    period: "Nov 2025 — Present",
     type: "Full-time",
     description:
-      "Design, develop and maintain web applications for a made-to-order ecommerce website for B2C customers with automation workflows using Google Apps Scripts and create responsive interfaces with interactive Canvas-Based components and real-time data visualization with production environments on AWS EC2 with 99%+ uptime cross browser compatibility and SEO best practices.",
+      "Designed, developed, and maintained a multilingual e-commerce platform, building end-to-end automated order workflows using Google Apps Script, QR payment verification, payment timers, and email notifications to reduce manual order processing to near zero. Managed complex tier-based pricing logic for international customers and deployed the platform on AWS EC2, maintaining over 99% uptime without dedicated DevOps support.",
     tags: [
       "HTML5",
       "CSS3",
@@ -20,12 +20,12 @@ const experiences = [
   },
   {
     id: 2,
-    role: "Cloud Engineer & IT Support (Internship)",
+    role: "Cloud Engineer",
     company: "A-HOST Co., Ltd.",
-    period: "2024 — 2025",
+    period: "Dec 2024 — Mar 2025",
     type: "Internship",
     description:
-      "Provided technical support by troubleshooting software and hardware issues while assisting in monitoring and maintaining database and implemented an AI-based firewall log analysis system to provide insights and recommendations for firewall network security and performance.",
+      "Identified unused historical firewall log data and independently proposed and developed an automated security reporting solution by building a SQL/Oracle-to-dashboard pipeline integrated with the Gemini API. This reduced Docx-based report generation from hours to minutes while also monitoring and maintaining databases daily, supporting data extraction and data integrity under the guidance of a senior engineer.",
     tags: [
       "Vue.js",
       "Vuetify",
@@ -129,7 +129,7 @@ export default function Experience() {
         {/* Download CV */}
         <div className="mt-12 flex items-center gap-4">
           <a
-            href="/files/naiyana-resume-fullstack.pdf"
+            href="/files/naiyana-nk-resume.pdf"
             download
             className="text-xs font-bold tracking-widest uppercase border border-gray-300 rounded-full px-6 py-3 text-indigo-500 hover:bg-indigo-500 hover:text-white hover:border-indigo-500 transition-all duration-200"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
@@ -137,7 +137,7 @@ export default function Experience() {
             Download Resume
           </a>
           <span className="text-xs text-gray-600 font-light">
-            PDF, updated 22 June 2026
+            PDF, updated 8 August 2026
           </span>
         </div>
       </div>
